@@ -6,7 +6,7 @@
 
 <% @shelters.each do |shelter| %>
   <div>
-  <p><b><%= shelter.name %></b><br>
+  <p><a href="/shelters/<%= shelter.id %>"> <b><%= shelter.name %></b></a> <br>
   <%= shelter.address %><br>
   <%= shelter.city %>, <%= shelter.state %><br>
   <%= shelter.zip %></p>
