@@ -1,0 +1,13 @@
+<h1> <%= @shelters.name %> </h1>
+
+<p> Id: <%= @shelters.id %> </p>
+<p>
+  <b> Address: </b> <br>
+  <%= @shelters.address %><br>
+  <%= @shelters.city %>, <%= @shelters.state %><br>
+  <%= @shelters.zip %>
+</p>
+
+<form action="/shelters" method="get">
+  <input type="submit" value="Return to Shelter">
+</form>
