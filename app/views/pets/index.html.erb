@@ -1,5 +1,10 @@
 <h1>All Pets</h1>
 
-<% @pet.each do |pet|%>
-  <h2><%= pet%></h2>
+<% @pets.each do |pet|%>
+  <p> Shelter: <%= pet[:shelter]%></p><br>
+  <p> Picture: <img src=<%= pet[:img]%> width=250></p><br>
+  <p> Name: <%= pet[:name]%></p><br>
+  <p> Age: <%= pet[:age]%></p><br>
+  <p> Sex: <%= pet[:sex]%></p><br>
+
 <%end%>
