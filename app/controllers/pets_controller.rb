@@ -1,5 +1,10 @@
 class PetsController < ApplicationController
   def index
-    @pets = [pet1 = {img: "https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg", name: "Max", age: "3", sex: "Male", shelter: "Mommi"}]
+    @shelter = Shelter.all
+    @pets = Pet.all
+  end
+
+  def id
+    @pet = Pet.find(params[:id])
   end
 end
