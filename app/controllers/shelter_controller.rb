@@ -73,5 +73,7 @@ class ShelterController < ApplicationController
     redirect_to "/shelters/#{(params[:pet][:shelter_id]).to_i}/pets"
   end
 
-  
+  def shelters
+    redirect_to '/shelters'
+  end
 end
