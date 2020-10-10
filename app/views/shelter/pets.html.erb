@@ -8,7 +8,7 @@
   <% @pets.each do |pet| %>
     <img src=<%= pet.image %> width=250>
     <p>
-      <%= pet.name %><br>
+      <a href="/pets/<%= pet.id %>"> <%= pet.name %></a><br>
       <%= pet.age %><br>
       <%= pet.sex %><br>
     </p>

@@ -72,4 +72,6 @@ class ShelterController < ApplicationController
 
     redirect_to "/shelters/#{(params[:pet][:shelter_id]).to_i}/pets"
   end
+
+  
 end

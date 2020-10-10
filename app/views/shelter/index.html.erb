@@ -5,15 +5,14 @@
 
 <% @shelters.each do |shelter| %>
   <div>
-  <p><a href="/shelters/<%= shelter.id %>"> <b><%= shelter.name %></b></a> <br>
-  <%= shelter.address %><br>
-  <%= shelter.city %>, <%= shelter.state %><br>
-  <%= shelter.zip %></p>
-  <a href="/shelters/<%= shelter.id %>/edit">Update Shelter</a><br>
-    <form action="shelters/<%= shelter.id %>" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="hidden" name="_method" value="delete">
-      <a href="/shelters"> <input type="submit" value="Delete"> </a>
-    </form>
+    <br>
+    <a href="/shelters/<%= shelter.id %>"> <b><%= shelter.name %></b></a>
+    <a href="/shelters/<%= shelter.id %>/edit">Update Shelter</a>
+    <%= link_to "Delete Pet", "/shelters/#{shelter.id}", method: 'delete'%>
+    <p>
+      <%= shelter.address %><br>
+      <%= shelter.city %>, <%= shelter.state %><br>
+      <%= shelter.zip %><br>
+    </p>
   </div>
 <% end %>

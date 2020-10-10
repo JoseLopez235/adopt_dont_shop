@@ -1,9 +1,12 @@
 <h1>All Pets</h1>
 
 <% @pets.each do |pet|%>
-  <p> Shelter: <%= (@shelter.find(pet.shelter_id)).name%></p><br>
-  <p> Picture: <img src=<%= pet.image%> width=250></p><br>
-  <p> Name: <%= pet.name%></p><br>
-  <p> Age: <%= pet.age%></p><br>
-  <p> Sex: <%= pet.sex%></p><br>
+<img src=<%= pet.image%> width=150 style="float:left">
+  <p>
+     Shelter: <%= (@shelter.find(pet.shelter_id)).name%><br>
+     Name: <%= pet.name%><br>
+     Age: <%= pet.age%><br>
+     Sex: <%= pet.sex%><br>
+  </p>
+  <br>
 <%end%>

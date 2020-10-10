@@ -6,4 +6,9 @@
   Sex: <%= @pet.sex %><br>
   Status: <%= @pet.status %><br>
   Discription: <%= @pet.description %><br>
+  <%= link_to "Delete Pet", "/pets/#{@pet.id}", method: 'delete'%>
 </p>
+
+<form action="/pets/<%= @pet.id %>/edit" method="get">
+  <input type="submit" value="Edit Pet">
+</form>
