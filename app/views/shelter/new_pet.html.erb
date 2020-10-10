@@ -1,0 +1,18 @@
+<h1>Add New Pet</h1>
+
+<form action="/shelters/<%= params[:shelter_id] %>/pets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter image URL:</p>
+  <input type='text' name='pet[image]'/><br/>
+  <p>Enter pet's name:</p>
+  <input type='text' name='pet[name]'/><br/>
+  <p>Enter pet's age:</p>
+  <input type='text' name='pet[age]'/><br/>
+  <p>Enter the sex:</p>
+  <input type='text' name='pet[sex]'/><br/>
+  <input type='hidden' name='pet[status]' value='Adoptable'/><br/>
+  <p>Enter pet's discription:</p>
+  <input type='text' name='pet[description]'/><br/>
+  <input type="hidden" name="pet[shelter_id]" value="<%= params[:shelter_id] %>">
+  <input type="submit" value="Create Pet">
+</form>

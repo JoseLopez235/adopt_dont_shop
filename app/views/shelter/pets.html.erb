@@ -1,0 +1,16 @@
+<h1><%= @shelter.name%> pets</h1>
+
+<div>
+  <form action="/shelters/<%= @shelter.id %>/pets/new" method="get">
+    <input type="submit" value="Add Pet">
+  </form>
+
+  <% @pets.each do |pet| %>
+    <img src=<%= pet.image %> width=250>
+    <p>
+      <a href="/pets/<%= pet.id %>"> <%= pet.name %></a><br>
+      <%= pet.age %><br>
+      <%= pet.sex %><br>
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<h1> Updating <%= @pet.name %>'s Info</h1>
+<img src=<%= @pet.image %> width=250>
+
+<form action="/pets/<%= @pet.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="hidden" name="_method" value="PATCH">
+  <p>Enter the pet's image:</p>
+  <input type='text' name='pet[image]' value="<%= @pet.image %>"><br/>
+  <p>Enter the pet's name:</p>
+  <input type='text' name='pet[name]' value="<%= @pet.name %>"/><br/>
+  <p>Enter the pet's age:</p>
+  <input type='text' name='pet[age]' value="<%= @pet.age %>"/><br/>
+  <p>Enter the pet's sex:</p>
+  <input type='text' name='pet[sex]' value="<%= @pet.sex %>"/><br/>
+  <p>Enter the pet's description:</p>
+  <input type='text' name='pet[description]' value="<%= @pet.description %>"/><br/>
+  <input type='hidden' name='pet[status]' value='Adoptable'/><br/>
+  <input type="hidden" name="pet[shelter_id]" value="<%= @pet.shelter_id %>">
+  <input type="submit" value="Update Pet">
+</form>
