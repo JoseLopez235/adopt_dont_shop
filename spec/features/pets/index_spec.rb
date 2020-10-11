@@ -21,4 +21,12 @@ describe "pet index page" do
     expect(page).to have_content(pet1.age)
     expect(page).to have_content(pet1.sex)
   end
+
+  it "should have links that lead to shelters and pets index page" do
+    shelter1 = Shelter.create(name: "Bob's Shelter", address: "123 s lori ave", city: "Mark", state: "Kane", zip: "25631")
+    pet1 = Pet.create(image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/American_Eskimo_Dog.jpg/1200px-American_Eskimo_Dog.jpg', name: "maximalin", age: 4, sex: "male", status: "Adoptable", description: "brave", shelter_id: shelter1.id )
+    visit '/pets'
+
+    expect(page).to have_link(nil, href: "/shelters")
+  end
 end

@@ -1,12 +1,15 @@
 <h1>All Pets</h1>
-
+<a href="/shelters">See all shelters</a><br>
 <% @pets.each do |pet|%>
 <img src=<%= pet.image%> width=150 style="float:left">
   <p>
-     Shelter: <%= (@shelter.find(pet.shelter_id)).name%><br>
-     Name: <%= pet.name%><br>
+     <a href="/shelters/<%= pet.shelter_id %>"> <b>Shelter: <%= (@shelter.find(pet.shelter_id)).name%></b></a>
+     <%= link_to "Delete Pet", "/pets/#{pet.id}", method: 'delete'%>
+     <a href="/pets/<%= pet.id %>/edit">Edit Pet</a><br>
+     <a href="/pets/<%= pet.id %>"> <b>Name: <b> <%= pet.name%></b></a><br>
      Age: <%= pet.age%><br>
      Sex: <%= pet.sex%><br>
   </p>
+  <br>
   <br>
 <%end%>

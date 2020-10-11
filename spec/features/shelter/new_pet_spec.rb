@@ -26,4 +26,13 @@ describe "shelter pets page" do
     expect(page).to have_content('male')
     expect(current_path).to eq("/shelters/#{shelter1.id}/pets")
   end
+
+  it "should have links that lead to shelters and pets index page" do
+    shelter1 = Shelter.create(name: "Bob's Shelter", address: "123 s lori ave", city: "Mark", state: "Kane", zip: "25631")
+
+    visit "/shelters/#{shelter1.id}/pets/new"
+
+    expect(page).to have_link(nil, href: "/shelters")
+    expect(page).to have_link(nil, href: "/pets")
+  end
 end
